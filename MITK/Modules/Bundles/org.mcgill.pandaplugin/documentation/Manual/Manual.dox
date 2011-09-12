@@ -1,0 +1,19 @@
+/**
+\bundlemainpage{org.mcgill.pandaplugin} Pandaplugin
+
+\image html icon.png "Icon of Pandaplugin"
+
+Available sections:
+  - \ref org.mcgill.pandapluginOverview
+
+\section org.mcgill.pandapluginOverview
+Describe the features of your awesome plugin here
+<ul>
+<li>Increases productivity
+<li>Creates beautiful images
+<li>Generates PhD thesis
+<li>Brings world peace
+</ul>
+
+*/
+

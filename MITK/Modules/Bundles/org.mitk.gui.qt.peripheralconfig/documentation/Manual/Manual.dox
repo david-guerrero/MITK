@@ -1,0 +1,13 @@
+/**
+\bundlemainpage{org.mitk.gui.qt.peripheralconfig} MITKPeripheralConfig
+
+\image html icon.png "Icon of MITKPeripheralConfig"
+
+Available sections:
+  - \ref org.mitk.gui.qt.peripheralconfigOverview
+
+\section org.mitk.gui.qt.peripheralconfigOverview
+This is the description for the MITKPeripheralConfig.
+
+*/
+

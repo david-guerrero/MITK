@@ -1,0 +1,26 @@
+
+IF(MITK_USE_OpenCV)
+
+  SET(dependencies OpenCV)
+  IF(MITK_USE_videoInput)
+    SET(dependencies ${dependencies} videoInput)  
+  ENDIF(MITK_USE_videoInput)
+
+  MITK_CREATE_MODULE(mitkOpenCVVideoSupport
+    DEPENDS Mitk MitkExt
+    PACKAGE_DEPENDS ${dependencies}
+    PROVIDES mitkOpenCVVideoSupport
+    ADDITIONAL_LIBS ${OPENCVVIDEOSUPPORT_ADDITIONAL_LIBS}
+    EXPORT_DEFINE MITK_OPENCVVIDEOSUPPORT_EXPORT
+  )
+  
+  IF(MITK_USE_QT)
+    ADD_SUBDIRECTORY(UI)
+  ENDIF(MITK_USE_QT)  
+    
+  IF(BUILD_TESTING)
+    ADD_SUBDIRECTORY(Testing)
+  ENDIF(BUILD_TESTING)
+
+ENDIF(MITK_USE_OpenCV)
+

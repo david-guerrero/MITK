@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QmitkToFConnectionWidgetControls</class>
+ <widget class="QWidget" name="QmitkToFConnectionWidgetControls">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>405</width>
+    <height>124</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>QmitkToFConnection</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>ToF camera connection</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QComboBox" name="m_SelectCameraCombobox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="maxVisibleItems">
+      <number>7</number>
+     </property>
+     <property name="insertPolicy">
+      <enum>QComboBox::InsertAtBottom</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QComboBox::AdjustToContents</enum>
+     </property>
+     <property name="frame">
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>PMD Camcube 2.0/3.0</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PMD CamBoard</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PMD O3D</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MESA SR4000</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PMD Player</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PMD Raw Data Player</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MITK Player</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="m_ConnectCameraButton">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>Connect to camera</string>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/QmitkToFUtilWidget.qrc">
+       <normaloff>:/images/powerRed.png</normaloff>
+       <normalon>:/images/powerGreen.png</normalon>:/images/powerRed.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QmitkToFPMDParameterWidget" name="m_PMDParameterWidget" native="true"/>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QmitkToFMESAParameterWidget" name="m_MESAParameterWidget" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QmitkToFPMDParameterWidget</class>
+   <extends>QWidget</extends>
+   <header>QmitkToFPMDParameterWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QmitkToFMESAParameterWidget</class>
+   <extends>QWidget</extends>
+   <header>QmitkToFMESAParameterWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resources/QmitkToFUtilWidget.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,7 @@
+@PLUGIN_COPYRIGHT@
+
+#include <Poco/ClassLibrary.h>
+
+@MANIFEST_ACTIVATOR_ENTRY@
+
+@MANIFEST_VIEW_ENTRY@

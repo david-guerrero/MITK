@@ -1,0 +1,34 @@
+/**
+
+\page TutorialPage The MITK Tutorial
+ 
+This tutorial gives an introduction to MITK. 
+We will start with the first steps of just compiling what you get after downloading MITK, continue to show how to
+display and do basic interaction with images, and finally show how to build an application module (functionality).
+
+The source code of the examples can be found in mitk/QApplications/Tutorial/ \n
+Two data files are used to execute the example code. They are located in mitk/Core/Code/Testing/Data/
+
+\li Pic3D.pic.gz \n
+This file contains an image.
+
+\li lungs.vtk \n
+This file contains a surface.
+
+\section TutorialSection Tutorial chapters
+
+\li \ref Step00Page "Step 0: Getting started"
+\li \ref Step01Page "Step 1: Displaying an image"
+\li \ref Step02Page "Step 2: Load one or more data sets"
+\li \ref Step03Page "Step 3: Create 3D view"
+\li \ref Step04Page "Step 4: Use several views to explore data"
+\li \ref Step05Page "Step 5: Interactively add points"
+\li \ref Step06Page "Step 6: Use an interactive region-grower"
+\li \ref Step07Page "Step 7: Convert result of region growing into a surface"
+\li \ref Step08Page "Step 8: Use QmitkStdMultiWidget as widget"
+\li \ref Step09Page "Step 9: A functionality"
+\li \ref Step10Page "Step 10: A new Interaction"
+
+Enjoy MITK!
+
+*/

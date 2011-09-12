@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Name: MITKPeripheralConfig 
+Bundle-SymbolicName: org.mitk.gui.qt.peripheralconfig 
+Bundle-Version: 0.1
+Bundle-Vendor: DKFZ, Medical and Biological Informatics
+Require-Bundle: org.mitk.gui.qt.common
+Bundle-Activator: mitk::PeripheralConfigActivator
+Bundle-ActivationPolicy: eager

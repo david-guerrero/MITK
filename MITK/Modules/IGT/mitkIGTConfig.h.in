@@ -1,0 +1,9 @@
+/*
+  mitkIGTConfig.h
+  this file is generated. Do not change!
+*/
+
+#cmakedefine MITK_USE_MICRON_TRACKER
+#cmakedefine MITK_MICRON_TRACKER_TEMP_DIR "@MITK_MICRON_TRACKER_TEMP_DIR@"
+#cmakedefine MITK_MICRON_TRACKER_CALIBRATION_DIR "@MITK_MICRON_TRACKER_CALIBRATION_DIR@"
+

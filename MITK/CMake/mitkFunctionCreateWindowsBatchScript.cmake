@@ -1,0 +1,25 @@
+function(mitkFunctionCreateWindowsBatchScript in out build_type)
+  if(GDCM_DIR)
+    set(GDCM_BIN_DIR "${GDCM_DIR}/bin/${build_type}")
+  else()
+    set(GDCM_BIN_DIR)
+  endif()
+  
+  if(OpenCV_DIR)
+    set(OpenCV_BIN_DIR "${OpenCV_DIR}/bin/${build_type}")
+  else()
+    set(OpenCV_BIN_DIR)
+  endif()
+  
+  set(MITK_LIBRARY_DIRS_WITH_BUILD_TYPE)
+  if(MITK_LIBRARY_DIRS)
+    foreach(lib_dir ${MITK_LIBRARY_DIRS})
+      list(APPEND MITK_LIBRARY_DIRS_WITH_BUILD_TYPE "${lib_dir}/${build_type}")
+    endforeach()
+  endif()
+  
+  set(VS_BUILD_TYPE ${build_type})
+  configure_file(${in} ${out} @ONLY)
+  # substitute again
+  configure_file(${out} ${out} @ONLY)
+endfunction()

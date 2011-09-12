@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/Qmitk" >
+        <file>Binaerbilder_48.png</file>
+        <file>Images_48.png</file>
+        <file>PointSet_48.png</file>
+        <file>Segmentation_48.png</file>
+        <file>Surface_48.png</file>
+    </qresource>
+</RCC>

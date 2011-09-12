@@ -1,0 +1,8 @@
+/**
+\bundlemainpage{org.berry.inspect} The Object Browser
+
+\image html ObjectBrowser.png "Icon of the Module"
+
+This view is only a debugging tool for berry::Object derived classes.
+
+*/
