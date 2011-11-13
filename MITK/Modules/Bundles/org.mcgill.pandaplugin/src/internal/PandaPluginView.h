@@ -24,6 +24,7 @@ PURPOSE.  See the above copyright notices for more information.
 #include <QmitkFunctionality.h>
 
 #include "ui_PandaPluginViewControls.h"
+#include <QPushButton>
 
 
 /*!
@@ -54,12 +55,19 @@ class PandaPluginView : public QmitkFunctionality
     /// \brief Called when the user clicks the GUI button
     void DoImageProcessing();
 
+		void ToggleFrames(bool on);
+
+		void GenerateInitialUI();
+
+		void CreateCommandBox();
+
   protected:
 
     /// \brief called by QmitkFunctionality when DataManager's selection has changed
     virtual void OnSelectionChanged( std::vector<mitk::DataNode*> nodes );
-
     Ui::PandaPluginViewControls m_Controls;
+		QString m_FileName;
+		QPushButton* m_LoadFileButton;
 
 };
 

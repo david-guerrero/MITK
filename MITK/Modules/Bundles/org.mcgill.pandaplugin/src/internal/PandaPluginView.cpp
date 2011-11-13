@@ -26,7 +26,8 @@ PURPOSE.  See the above copyright notices for more information.
 
 // Qt
 #include <QMessageBox>
-
+#include <QPushButton>
+#include <QFileDialog>
 
 const std::string PandaPluginView::VIEW_ID = "org.mitk.views.pandapluginview";
 
@@ -43,8 +44,9 @@ void PandaPluginView::CreateQtPartControl( QWidget *parent )
 {
   // create GUI widgets from the Qt Designer's .ui file
   m_Controls.setupUi( parent );
-
-  connect( m_Controls.buttonPerformImageProcessing, SIGNAL(clicked()), this, SLOT(DoImageProcessing()) );
+	ToggleFrames(false);
+	GenerateInitialUI();
+// connect( m_Controls.buttonPerformImageProcessing, SIGNAL(clicked()), this, SLOT(DoImageProcessing()) );
 
 
 
@@ -53,7 +55,7 @@ void PandaPluginView::CreateQtPartControl( QWidget *parent )
 void PandaPluginView::OnSelectionChanged( std::vector<mitk::DataNode*> nodes )
 { 
   // iterate all selected objects, adjust warning visibility
-  for( std::vector<mitk::DataNode*>::iterator it = nodes.begin();
+ /* for( std::vector<mitk::DataNode*>::iterator it = nodes.begin();
        it != nodes.end();
        ++it )
   {
@@ -61,7 +63,7 @@ void PandaPluginView::OnSelectionChanged( std::vector<mitk::DataNode*> nodes )
   
     if( node.IsNotNull() && dynamic_cast<mitk::Image*>(node->GetData()) )
     {
-      m_Controls.labelWarning->setVisible( false );
+//      m_Controls.labelWarning->setVisible( false );
       m_Controls.buttonPerformImageProcessing->setEnabled( true );
       return;
     }
@@ -69,12 +71,13 @@ void PandaPluginView::OnSelectionChanged( std::vector<mitk::DataNode*> nodes )
 
   m_Controls.labelWarning->setVisible( true );
   m_Controls.buttonPerformImageProcessing->setEnabled( false );
+	*/
 }
 
 
 void PandaPluginView::DoImageProcessing()
 {
-  std::vector<mitk::DataNode*> nodes = this->GetDataManagerSelection();
+  /*std::vector<mitk::DataNode*> nodes = this->GetDataManagerSelection();
   if (nodes.empty()) return;
 
   mitk::DataNode* node = nodes.front();
@@ -110,5 +113,32 @@ void PandaPluginView::DoImageProcessing()
       // actually do something here...
 
     }
-  }
+  }*/
+}
+
+
+void PandaPluginView::ToggleFrames(bool on)
+{
+	m_Controls.m_LeftFrame->setVisible(on);
+	m_Controls.m_MiddleWidget->setVisible(on);
+	m_Controls.m_RightFrame->setVisible(on);
+}
+
+void PandaPluginView::GenerateInitialUI()
+{
+	m_LoadFileButton = new QPushButton(m_Controls.m_OuterFrame);
+	m_LoadFileButton->setText(QString("Upload a file"));
+	QObject::connect( m_LoadFileButton, SIGNAL(clicked()), this, SLOT(CreateCommandBox()) );
+}
+
+void PandaPluginView::CreateCommandBox()
+{
+	m_FileName = QFileDialog::getOpenFileName ( m_LoadFileButton, QString("Choose the file to load"), QString("C:\\"), QString(" *.xml"));
+	//loading of file
+	if(!m_FileName.isEmpty())
+	{
+		ToggleFrames(true);
+		m_LoadFileButton->setEnabled(false);
+		m_LoadFileButton->setVisible(false);
+	}
 }

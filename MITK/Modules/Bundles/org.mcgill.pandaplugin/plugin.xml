@@ -5,7 +5,7 @@
     <view id="org.mitk.views.pandapluginview"
           name="PandaPluginView"
           class="PandaPluginView"
-          icon="resources/icon.xpm" />
+          icon="resources/icon.png" />
   </extension>
 
 </plugin>
